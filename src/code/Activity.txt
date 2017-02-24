@@ -1,0 +1,14 @@
+package &package&;
+
+
+import &mvp&.MVPBaseActivity;
+
+
+/**
+ * MVPPlugin
+ * ＊ 邮箱 784787081@qq.com
+ */
+
+public class &Activity& extends MVPBaseActivity<&Contract&.View, &Presenter&> implements &Contract&.View {
+
+}

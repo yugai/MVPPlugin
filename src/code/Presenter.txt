@@ -1,0 +1,14 @@
+package &package&;
+
+import android.content.Context;
+
+import &mvp&.BasePresenterImpl;
+
+/**
+ * MVPPlugin
+ * ＊ 邮箱 784787081@qq.com
+ */
+
+public class &Presenter& extends BasePresenterImpl<&Contract&.View> implements &Contract&.Presenter{
+    
+}
