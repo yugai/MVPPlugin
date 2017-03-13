@@ -5,7 +5,7 @@ import &mvp&.MVPBaseFragment;
 
 /**
  * MVPPlugin
- * ＊ 邮箱 784787081@qq.com
+ *  邮箱 784787081@qq.com
  */
 
 public class &Fragment& extends MVPBaseFragment<&Contract&.View, &Presenter&> implements &Contract&.View {

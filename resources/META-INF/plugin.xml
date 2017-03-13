@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>com.yugai.mvp</id>
   <name>MVPPlugin</name>
-  <version>1.1</version>
+  <version>1.3</version>
   <vendor email="784787081@qq.com" url="https://yugai.github.io">MaYi</vendor>
 
   <description><![CDATA[
@@ -10,7 +10,8 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      第一次开发插件多多指教.<br>
+      修复AS 2.3报错
+      修复windows文件路径不对，和乱码问题<br>
     ]]>
   </change-notes>
 
@@ -27,7 +28,7 @@
 
   <actions>
     <!-- Add your actions here -->
-      <action id="mvp" class="AndroidMvpAction" text="MvpFile" description="Help you to quickly generate a template" icon="/icon/icon.png">
+      <action id="mvp" class="template.AndroidMvpAction" text="MvpFile" description="Help you to quickly generate a template" icon="/icon/icon.png">
           <add-to-group group-id="NewGroup" anchor="last"/>
       </action>
   </actions>

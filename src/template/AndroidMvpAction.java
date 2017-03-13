@@ -1,3 +1,5 @@
+package template;
+
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataKeys;
@@ -64,9 +66,11 @@ public class AndroidMvpAction extends AnAction {
         String path = selectGroup.getPath() + "/" + className.toLowerCase();
         String packageName = path.substring(path.indexOf("java") + 5, path.length()).replace("/", ".");
         String mvpPath = FileUtil.traverseFolder(path.substring(0, path.indexOf("java")));
-        mvpPath=mvpPath.substring(mvpPath.indexOf("java") + 5, mvpPath.length()).replace("/", ".");
+        mvpPath=mvpPath.substring(mvpPath.indexOf("java") + 5, mvpPath.length()).replace("/", ".").replace("\\",".");
 
         className = className.substring(0, 1).toUpperCase() + className.substring(1);
+
+        System.out.print(mvpPath+"---"+className+"----"+packageName);
 
         String contract = readFile("Contract.txt").replace("&package&", packageName).replace("&mvp&", mvpPath).replace("&Contract&", className + "Contract");
         String presenter = readFile("Presenter.txt").replace("&package&", packageName).replace("&mvp&", mvpPath).replace("&Contract&", className + "Contract").replace("&Presenter&", className + "Presenter");
