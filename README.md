@@ -1,5 +1,4 @@
 # MVPPlugin
 Android studio插件，帮助快速生成MVP架构
 
-
-AS2.3  出了点问题，  正在努力修复
+修复AS2.3问题， 修复windows路径和乱码问题， 1.3正在上传中
