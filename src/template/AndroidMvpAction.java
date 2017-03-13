@@ -32,6 +32,7 @@ public class AndroidMvpAction extends AnAction {
         } else {
             createClassMvp(className);
         }
+        project.getBaseDir().refresh(false,true);
     }
 
     /**
@@ -84,6 +85,7 @@ public class AndroidMvpAction extends AnAction {
         }
         writetoFile(contract, path, className + "Contract.java");
         writetoFile(presenter, path, className + "Presenter.java");
+
 
     }
 
