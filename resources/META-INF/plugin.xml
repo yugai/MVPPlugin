@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>com.yugai.mvp</id>
   <name>MVPPlugin</name>
-  <version>1.3</version>
+  <version>1.4</version>
   <vendor email="784787081@qq.com" url="https://yugai.github.io">MaYi</vendor>
 
   <description><![CDATA[
@@ -10,8 +10,7 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      修复AS 2.3报错
-      修复windows文件路径不对，和乱码问题<br>
+      修复低版本显示不兼容问题<br>
     ]]>
   </change-notes>
 
