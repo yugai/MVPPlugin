@@ -1,7 +1,7 @@
-<idea-plugin version="2">
+<idea-plugin>
   <id>com.yugai.mvp</id>
   <name>MVPPlugin</name>
-  <version>1.4</version>
+  <version>1.6</version>
   <vendor email="784787081@qq.com" url="https://yugai.github.io">MaYi</vendor>
 
   <description><![CDATA[
@@ -10,16 +10,16 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      修复低版本显示不兼容问题<br>
+      修复部分问题<br>
     ]]>
   </change-notes>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="131"/>
+  <idea-version since-build="173.0"/>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
-  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.platform</depends>
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
@@ -27,7 +27,7 @@
 
   <actions>
     <!-- Add your actions here -->
-      <action id="mvp" class="template.AndroidMvpAction" text="MvpFile" description="Help you to quickly generate a template" icon="/icon/icon.png">
+      <action id="mvp" class="template.AndroidMvpAction" text="MvpFile" description="Help you to quickly generate a template" icon="/img/icon.png">
           <add-to-group group-id="NewGroup" anchor="last"/>
       </action>
   </actions>

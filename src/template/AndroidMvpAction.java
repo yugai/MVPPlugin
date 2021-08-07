@@ -1,13 +1,12 @@
 package template;
 
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataKeys;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 
 import java.io.*;
+import java.util.Objects;
 
 /**
  * Created with IntelliJ IDEA
@@ -22,7 +21,7 @@ public class AndroidMvpAction extends AnAction {
     public void actionPerformed(AnActionEvent e) {
         project = e.getProject();
         String className = Messages.showInputDialog(project, "请输入类名称", "NewMvpGroup", Messages.getQuestionIcon());
-        selectGroup = DataKeys.VIRTUAL_FILE.getData(e.getDataContext());
+        selectGroup = CommonDataKeys.VIRTUAL_FILE.getData(e.getDataContext());
         if (className == null || className.equals("")) {
             System.out.print("没有输入类名");
             return;
@@ -32,7 +31,7 @@ public class AndroidMvpAction extends AnAction {
         } else {
             createClassMvp(className);
         }
-        project.getBaseDir().refresh(false,true);
+        Objects.requireNonNull(project.getProjectFile()).refresh(false,true);
     }
 
     /**

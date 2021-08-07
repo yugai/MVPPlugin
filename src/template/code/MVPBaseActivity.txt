@@ -2,15 +2,14 @@ package &package&;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.lang.reflect.ParameterizedType;
 
 
 /**
  * MVPPlugin
- *  邮箱 784787081@qq.com
  */
 
 public abstract class MVPBaseActivity<V extends BaseView,T extends BasePresenterImpl<V>> extends AppCompatActivity implements BaseView{
