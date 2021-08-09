@@ -26,7 +26,7 @@ public class AndroidMvpAction extends AnAction {
             System.out.print("没有输入类名");
             return;
         }
-        if (className.equals("mvp") || className.equals("MVP") || className.equals("Mvp")) {
+        if (className.equalsIgnoreCase("mvp")) {
             createMvpBase();
         } else {
             createClassMvp(className);
@@ -95,7 +95,7 @@ public class AndroidMvpAction extends AnAction {
         String content = "";
         try {
             content = new String(readStream(in));
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         return content;
     }
@@ -124,7 +124,7 @@ public class AndroidMvpAction extends AnAction {
 
     private byte[] readStream(InputStream inStream) throws Exception {
         ByteArrayOutputStream outSteam = new ByteArrayOutputStream();
-        try {
+        try (inStream; outSteam) {
             byte[] buffer = new byte[1024];
             int len = -1;
             while ((len = inStream.read(buffer)) != -1) {
@@ -132,10 +132,7 @@ public class AndroidMvpAction extends AnAction {
                 System.out.println(new String(buffer));
             }
 
-        } catch (IOException e) {
-        } finally {
-            outSteam.close();
-            inStream.close();
+        } catch (IOException ignored) {
         }
         return outSteam.toByteArray();
     }
