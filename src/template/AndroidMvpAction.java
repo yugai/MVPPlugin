@@ -47,11 +47,11 @@ public class AndroidMvpAction extends AnAction {
         String activity = readFile("MVPBaseActivity.txt").replace("&package&", packageName);
         String fragment = readFile("MVPBaseFragment.txt").replace("&package&", packageName);
 
-        writetoFile(presenter, path, "BasePresenter.java");
-        writetoFile(presenterImpl, path, "BasePresenterImpl.java");
-        writetoFile(view, path, "BaseView.java");
-        writetoFile(activity, path, "MVPBaseActivity.java");
-        writetoFile(fragment, path, "MVPBaseFragment.java");
+        writeFile(presenter, path, "BasePresenter.java");
+        writeFile(presenterImpl, path, "BasePresenterImpl.java");
+        writeFile(view, path, "BaseView.java");
+        writeFile(activity, path, "MVPBaseActivity.java");
+        writeFile(fragment, path, "MVPBaseFragment.java");
 
     }
 
@@ -77,20 +77,20 @@ public class AndroidMvpAction extends AnAction {
 
         if (isFragment) {
             String fragment = readFile("Fragment.txt").replace("&package&", packageName).replace("&mvp&", mvpPath).replace("&Fragment&", className + "Fragment").replace("&Contract&", className + "Contract").replace("&Presenter&", className + "Presenter");
-            writetoFile(fragment, path, className + "Fragment.java");
+            writeFile(fragment, path, className + "Fragment.java");
         } else {
             String activity = readFile("Activity.txt").replace("&package&", packageName).replace("&mvp&", mvpPath).replace("&Activity&", className + "Activity").replace("&Contract&", className + "Contract").replace("&Presenter&", className + "Presenter");
-            writetoFile(activity, path, className + "Activity.java");
+            writeFile(activity, path, className + "Activity.java");
         }
-        writetoFile(contract, path, className + "Contract.java");
-        writetoFile(presenter, path, className + "Presenter.java");
+        writeFile(contract, path, className + "Contract.java");
+        writeFile(presenter, path, className + "Presenter.java");
 
 
     }
 
 
     private String readFile(String filename) {
-        InputStream in = null;
+        InputStream in;
         in = this.getClass().getResourceAsStream("code/" + filename);
         String content = "";
         try {
@@ -100,7 +100,7 @@ public class AndroidMvpAction extends AnAction {
         return content;
     }
 
-    private void writetoFile(String content, String filepath, String filename) {
+    private void writeFile(String content, String filepath, String filename) {
         try {
             File floder = new File(filepath);
             // if file doesnt exists, then create it
