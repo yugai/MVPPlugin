@@ -102,10 +102,10 @@ public class AndroidMvpAction extends AnAction {
 
     private void writeFile(String content, String filepath, String filename) {
         try {
-            File floder = new File(filepath);
+            File folder = new File(filepath);
             // if file doesnt exists, then create it
-            if (!floder.exists()) {
-                floder.mkdirs();
+            if (!folder.exists()) {
+                folder.mkdirs();
             }
             File file = new File(filepath + "/" + filename);
             if (!file.exists()) {
@@ -122,7 +122,7 @@ public class AndroidMvpAction extends AnAction {
         }
     }
 
-    private byte[] readStream(InputStream inStream) throws Exception {
+    private byte[] readStream(InputStream inStream) {
         ByteArrayOutputStream outSteam = new ByteArrayOutputStream();
         try (inStream; outSteam) {
             byte[] buffer = new byte[1024];
