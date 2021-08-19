@@ -12,7 +12,7 @@ public class FileUtil {
     public static String traverseFolder(String path) {
         File file = new File(path);
         if (file.exists()) {
-            LinkedList<File> list = new LinkedList<File>();
+            LinkedList<File> list = new LinkedList<>();
             File[] files = file.listFiles();
             for (File file2 : files) {
                 if (file2.isDirectory()) {
@@ -27,6 +27,7 @@ public class FileUtil {
             while (!list.isEmpty()) {
                 temp_file = list.removeFirst();
                 files = temp_file.listFiles();
+                if (files == null) break;
                 for (File file2 : files) {
                     if (file2.isDirectory()) {
                         System.out.println("文件夹:" + file2.getAbsolutePath());
