@@ -116,7 +116,6 @@ public class AndroidMvpAction extends AnAction {
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(content);
             bw.close();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -131,7 +130,6 @@ public class AndroidMvpAction extends AnAction {
                 outSteam.write(buffer, 0, len);
                 System.out.println(new String(buffer));
             }
-
         } catch (IOException ignored) {
         }
         return outSteam.toByteArray();
