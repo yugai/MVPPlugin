@@ -1,6 +1,6 @@
 <idea-plugin>
   <id>com.yugai.mvp</id>
-  <name>MVPPlugin</name>
+  <name>MVPGenerator</name>
   <version>1.6</version>
   <vendor email="784787081@qq.com" url="https://yugai.github.io">MaYi</vendor>
 
