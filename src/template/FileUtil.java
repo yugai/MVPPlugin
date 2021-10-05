@@ -14,6 +14,7 @@ public class FileUtil {
         if (file.exists()) {
             LinkedList<File> list = new LinkedList<>();
             File[] files = file.listFiles();
+            assert files != null;
             for (File file2 : files) {
                 if (file2.isDirectory()) {
                     System.out.println("文件夹:" + file2.getAbsolutePath());
