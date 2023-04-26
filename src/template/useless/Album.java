@@ -21,6 +21,4 @@ public class Album {
 
     private Date createTime;
 
-    private String test;
-
 }
